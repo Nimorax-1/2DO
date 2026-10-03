@@ -19,3 +19,8 @@ Download the files and open `index.html` in any browser. No install needed.
 
 ## License
 MIT
+
+# 2DO
+
+![2DO preview](your-image-filename.png)
+
