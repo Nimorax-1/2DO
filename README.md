@@ -22,5 +22,5 @@ MIT
 
 # 2DO
 
-![2DO preview](your-image-filename.png)
+![2DO preview](preview.png)
 
