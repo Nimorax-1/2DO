@@ -1,8 +1,20 @@
 const taskInput = document.getElementById('taskInput');
 const addTaskButton = document.getElementById('addTaskButton');
 const taskList = document.getElementById('taskList');
+const videoPopup = document.getElementById('videoPopup');
+const actionVideo = document.getElementById('actionVideo');
 
 const tasks = [];
+
+function playVideo(fileName) {
+  actionVideo.src = fileName;
+  videoPopup.style.display = 'flex';
+  actionVideo.play();
+}
+
+actionVideo.addEventListener('ended', () => {
+  videoPopup.style.display = 'none';
+});
 
 function renderTasks() {
   taskList.innerHTML = '';
@@ -22,12 +34,17 @@ function renderTasks() {
     checkbox.addEventListener('change', () => {
       task.completed = checkbox.checked;
       taskText.style.textDecoration = checkbox.checked ? 'line-through' : 'none';
+
+      if (checkbox.checked) {
+        playVideo('complete.mp4');
+      }
     });
 
     const deleteButton = document.createElement('button');
     // trash bin seems to be a better idea than X 
     deleteButton.textContent = '🗑';            
     deleteButton.addEventListener('click', () => {
+      playVideo('delete.mp4');
       tasks.splice(index, 1);
       renderTasks();
     });
@@ -46,6 +63,7 @@ addTaskButton.addEventListener('click', () => {
     tasks.push({ text: task, completed: false });
     taskInput.value = '';
     renderTasks();
+    playVideo('add.mp4');
   }
 });
 

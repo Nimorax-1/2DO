@@ -30,7 +30,7 @@ body {
   max-width: 1200px;
   min-height: 90vh;
   margin: 40px auto 0;
-  background: rgba(245, 245, 245, 0.85);
+  background: rgba(245, 245, 245, 0.92);
 border-right-color: rgb(180, 150, 150);
   border-right-width: 15px;
   border-right-style: solid;
@@ -117,4 +117,21 @@ h1 {
   font-size: 18px;
   font-family: Gabriel Sans, Arial, sans-serif;
   font-weight: bold;
+}
+
+#videoPopup {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  z-index: 10;
+  transform: translateY(-50%);
+}
+
+#actionVideo {
+  display: block;
+  width: 280px;
+  max-width: 90%;
+  max-height: 300px;
+  border-radius: 8px;
 }
